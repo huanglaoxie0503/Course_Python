@@ -18,5 +18,4 @@ class User:
 
 if __name__ == '__main__':
     user = User(NewDate(1992, 2, 1))
-
     print(user.get_age())
