@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed, wait, FIRST_COMPLETED
+from concurrent.futures import Future
 
 """
     Python 中的线程池:
         主线程中可以获取某一线程或者某一状态以及返回值
         当一个线程完成的时候我们主线程能立即知道
         futures 可以让多线程和多进程编码接口一致
+        
+    Future，未来对象，task 返回容器
 """
 
 
