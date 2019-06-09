@@ -48,9 +48,8 @@ if __name__ == '__main__':
         print("get {0} page success".format(data))
 
     # 3. 通过 executor 获取已经完成的 task
-    if __name__ == '__main__':
-        for data in executor.map(get_html, urls):
-            print("get {0} page ".format(data))
+    for data in executor.map(get_html, urls):
+        print("get {0} page ".format(data))
 
 
 
