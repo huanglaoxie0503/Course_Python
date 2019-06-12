@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import types
 """
 Python 为了将语义变得更加明确，引入了async和await关键字用于定义原生协程
 """
@@ -8,6 +8,11 @@ Python 为了将语义变得更加明确，引入了async和await关键字用于
 async def downloader(url):
     # async 里不能用 yield
     return "小米"
+
+
+# @types.coroutine
+# def downloader(url):
+#     yield "小米"
 
 
 async def download_url(url):
