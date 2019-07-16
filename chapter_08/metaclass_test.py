@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/6/1 22:02
 """
     1. 什么是元类？
         元类就是创建类的类
@@ -44,6 +43,7 @@ class BaseClass(object):
 
 
 class MetaClass(type):
+    # 类也是对象，type 创建类的类
     def __new__(cls, *args, **kwargs):
         return super().__new__(cls, *args, **kwargs)
 

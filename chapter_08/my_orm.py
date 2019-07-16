@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/6/1 23:47
 import numbers
 
 """
@@ -105,8 +104,8 @@ class BaseModel(metaclass=ModelMetaClass):
 
 
 class User(BaseModel):
-    name = CharField(db_column="", max_length=10)
-    age = IntField(db_column="", min_value=0, max_value=100)
+    name = CharField(db_column="姓名", max_length=10)
+    age = IntField(db_column="年龄", min_value=0, max_value=100)
 
     class Meta:
         db_table = "user"
@@ -114,6 +113,7 @@ class User(BaseModel):
 
 if __name__ == '__main__':
     user = User()
-    user.name = "tom"
-    user.age = 28
+    getattr(user, "name")
+    user.name = "袁承志"
+    user.age = 27
     user.save()

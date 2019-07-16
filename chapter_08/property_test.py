@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/5/31 23:21
 from datetime import date, datetime
 """
     描述：
-        property 属性 (动态属性)
+        property 属性 (动态属性)、属性描述符
 """
 
 
@@ -35,9 +34,10 @@ if __name__ == '__main__':
     res_01 = user.age
     print(res_01)
 
+    # 属性赋值
     user.age = 20
-    print(user._age)
     print(user.age)
+    print(user._age)
 
 
 

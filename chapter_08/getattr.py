@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/5/31 23:37
 from datetime import  date
 """
     描述：
@@ -18,13 +17,14 @@ class User(object):
     def __getattr__(self, item):
         return self.info[item]
 
-    def __getattribute__(self, item):
-        return "Tom"
+    # def __getattribute__(self, item):
+    #     # 能不重写尽量不重写
+    #     return "no field"
 
 
 if __name__ == '__main__':
     user = User('Tom', date(year=1992, month=5, day=31), info={"company_name": "清华大学"})
     # print(user.age)
-    # print(user.name)
+    print(user.name)
 
     print(user.company_name)
