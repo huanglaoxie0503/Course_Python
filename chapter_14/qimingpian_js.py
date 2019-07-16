@@ -9,9 +9,9 @@ https://www.qimingpian.com/finosda/project/pinvestment
 """
 
 
-def decrypt(encrypt_data):
+def decrypt(data):
     ctx = execjs.compile(open('js/qimingpian.js').read())
-    return base64.b64decode(ctx.call('my_decrypt', encrypt_data))
+    return base64.b64decode(ctx.call('my_decrypt', data))
 
 
 if __name__ == '__main__':
