@@ -13,21 +13,24 @@ asyncio 爬虫：去重、入库(aiomysql)
 目标网站：http://www.jobbole.com/
 """
 
-start_url = "http://www.jobbole.com/"
+start_url = "http://python.jobbole.com/all-posts/"
 waiting_urls = []
 seen_urls = set()
 stopping = False
+sem = asyncio.Semaphore(3)
 
 
 async def fetch(url, session):
-    try:
-        async with session.get(url) as resp:
-            print('url status:{0}'.format(resp.status))
-            if resp.status in [200, 201]:
-                data = await resp.text()
-                return data
-    except Exception as e:
-        print(e)
+    async with sem:
+        await asyncio.sleep(1)
+        try:
+            async with session.get(url) as resp:
+                print('url status:{0}'.format(resp.status))
+                if resp.status in [200, 201]:
+                    data = await resp.text()
+                    return data
+        except Exception as e:
+            print(e)
 
 
 def extract_urls(html):
