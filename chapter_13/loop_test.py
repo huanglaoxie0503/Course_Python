@@ -34,7 +34,7 @@ async def get_html_value(url):
 
 def callback(url, future):
     print(url)
-    print("send email bobby")
+    print("send email summer")
 
 
 # wait 和 gather
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # get_future = asyncio.ensure_future(get_html_value("http://kuaixun.stcn.com/index.shtml"))
     # 协程注册到 loop 里
     task = loop.create_task(get_html_value("http://kuaixun.stcn.com/index.shtml"))
-    # 添加一个函数
+    # 添加一个函数 ，partial把一个函数包装成一个参数
     task.add_done_callback(partial(callback, "http://kuaixun.stcn.com/index.shtml"))
 
     loop.run_until_complete(task)
